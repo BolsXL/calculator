@@ -13,6 +13,8 @@
 .display {
     margin-bottom: 2rem;
     font-size: 1.5rem;
+    max-width: 40ch;
+    text-align: center;
 }
 
 .calculator {
@@ -30,4 +32,8 @@
     display: grid;
 
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button-container > button {
+    margin: 0.20rem;
 }

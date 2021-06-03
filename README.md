@@ -1,0 +1,1 @@
+## Calculator Project from [TheOdinProject](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator)

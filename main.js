@@ -73,8 +73,15 @@ button0.addEventListener('click', (e) => {
 
 calcButton.addEventListener('click', (e) => {
     let input = calculation.textContent.split(" ");
-    let res = operate(input[1], parseInt(input[0]), parseInt(input[2]));
-    result.textContent = ` = ${res}`;
+    let x = 0, y = 0, operator = "+", tot = 0;
+    for (; input.length > 1 ;) {
+        x = input.shift();
+        operator = input.shift();
+        y = input.shift();
+        tot = operate(operator, x, y);
+        input.unshift(tot);
+    } 
+    result.textContent = ` = ${tot}`;
 });
 
 
@@ -86,8 +93,8 @@ function multiply(x, y) {return x * y;}
 function divide(x, y) {return x / y;}
 
 function operate(operator, x, y) {
-    if (operator == "+") {return add(x, y)}
-    else if (operator == "-") {return subtract(x, y)}
-    else if (operator == "*") {return multiply(x, y)}
-    else if (operator == "/") {return divide(x, y)}
+    if (operator == "+") {return add(parseInt(x), parseInt(y))}
+    else if (operator == "-") {return subtract(parseInt(x), parseInt(y))}
+    else if (operator == "*") {return multiply(parseInt(x), parseInt(y))}
+    else if (operator == "/") {return divide(parseInt(x), parseInt(y))}
 }
